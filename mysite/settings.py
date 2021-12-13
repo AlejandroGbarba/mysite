@@ -37,6 +37,18 @@ DEBUG = env('DEBUG')
 # exception if SECRET_KEY not in os.environ
 SECRET_KEY = env('SECRET_KEY')
 
+DATABASES = {
+    # read os.environ['DATABASE_URL'] and raises
+    # ImproperlyConfigured exception if not found
+    #
+    # The db() method is an alias for db_url().
+    'default': env.db(),
+}
+
+
+
+
+
 ALLOWED_HOSTS = [ '*', ]
 
 
